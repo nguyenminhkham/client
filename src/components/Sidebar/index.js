@@ -17,13 +17,13 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to="about" onClick={toggle}>About</SidebarLink>
-                    <SidebarLink to="discover" onClick={toggle}>Discover</SidebarLink>
-                    <SidebarLink to="services" onClick={toggle}>Services</SidebarLink>
-                    <SidebarLink to="signup" onClick={toggle}>Sign up</SidebarLink>
+                    <SidebarLink to="about" onClick={toggle}>Về chúng tôi</SidebarLink>
+                    <SidebarLink to="discover" onClick={toggle}>Sản phẩm</SidebarLink>
+                    <SidebarLink to="services" onClick={toggle}>Dịch vụ</SidebarLink>
+                    <SidebarLink to="signup" onClick={toggle}>Đăng ký</SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRoute to='/signin' onClick={toggle}>Sign In</SidebarRoute>
+                    <SidebarRoute to='/signin' onClick={toggle}>Đăng nhập</SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>
         </SidebarContainer>
