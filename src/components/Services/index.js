@@ -15,22 +15,22 @@ import {
 const Services = () => {
     return (
         <ServicesContainer id="services">
-            <ServicesH1>Our Services</ServicesH1>
+            <ServicesH1>Dịch vụ của chúng tôi</ServicesH1>
             <ServicesWrapper>
                 <ServicesCard>
                     <ServicesIcon src={Icon1}/>
-                    <ServicesH2>Reduce expenses</ServicesH2>
-                    <ServicesP>We help reduce your fess and increase your overall revenue</ServicesP>
+                    <ServicesH2>Bản vẽ cơ khí</ServicesH2>
+                    <ServicesP>Chúng tôi giúp giảm chi phí và tăng doanh thu tổng thể của bạn</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon2}/>
-                    <ServicesH2>Virtual Offices</ServicesH2>
-                    <ServicesP>You can access our platform online anywhere in the world</ServicesP>
+                    <ServicesH2>Thiết kế cơ khí</ServicesH2>
+                    <ServicesP>Sáng tạo và bán bản vẽ của bạn thông qua nền tảng ở mọi nơi trên thế giới</ServicesP>
                 </ServicesCard>
                 <ServicesCard>
                     <ServicesIcon src={Icon3}/>
-                    <ServicesH2>Premium Benefits</ServicesH2>
-                    <ServicesP>Unlock our special membership card that return cash back.</ServicesP>
+                    <ServicesH2>Khóa học thiết kế</ServicesH2>
+                    <ServicesP>Rút ngắn thời gian trở thành kỹ sư thiết kế cơ khí chuyên  nghiệp</ServicesP>
                 </ServicesCard>
             </ServicesWrapper>
         </ServicesContainer>

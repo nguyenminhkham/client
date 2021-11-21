@@ -25,9 +25,9 @@ const HeroSection = () => {
                 <VideoBg autoPlay loop muted src={Video} type='video/mp4' />
             </HeroBg>
             <HeroContent>
-                <HeroH1>Virtual Banking Made Easy</HeroH1>
+                <HeroH1>Thiết kế cơ khí trở nên dễ dàng</HeroH1>
                 <HeroP>
-                    Sign up for a new accoun today and receive $250 in credit towards your next payments.
+                    Đăng ký hôm nay để nhận 1,000,000 đồng.
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to ='signup'
@@ -41,7 +41,7 @@ const HeroSection = () => {
                     exact='true'
                     offset={-80}
                     > 
-                        Get started {hover ? <ArrowForward /> : <ArrowRight />}
+                        Đăng ký {hover ? <ArrowForward /> : <ArrowRight />}
                     </Button>
                 </HeroBtnWrapper>
             </HeroContent>

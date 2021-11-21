@@ -24,8 +24,8 @@ const Home = () => {
             <Services />
             <InfoSection {...homeObjThree}/> 
             <InfoSection {...homeObjFour}/> 
-            <InfoSection {...homeObjFive}/> 
-            <InfoSection {...homeObjSix}/>
+            {/* <InfoSection {...homeObjFive}/> 
+            <InfoSection {...homeObjSix}/> */}
             <Footer />
         </>
     )

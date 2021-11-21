@@ -50,7 +50,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >About</NavLinks>
+                        >Về chúng tôi</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks
@@ -60,7 +60,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Discover</NavLinks>
+                        >Sản phẩm</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks
@@ -70,7 +70,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Services</NavLinks>
+                        >Dịch vụ</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks
@@ -80,7 +80,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Sign Up</NavLinks>
+                        >Đăng ký</NavLinks>
                     </NavItem>
                 </NavMenu>
                 <NavBtn>
@@ -91,7 +91,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Sign in</NavBtnLink>
+                        >Đăng nhập</NavBtnLink>
                 </NavBtn>
             </NavbarContainer>
         </Nav>

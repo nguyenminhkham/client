@@ -9,13 +9,13 @@ const SignIn = () => {
                     <Icon to="/">Tmaster</Icon>
                     <FormContent>
                         <Form action="#">
-                            <FormH1>Sign in to your account</FormH1>
+                            <FormH1>Đăng nhập</FormH1>
                             <FormLabel htmlFor='for'>Email</FormLabel>
                             <FormInput type='email' required />
-                            <FormLabel htmlFor='for'>Password</FormLabel>
+                            <FormLabel htmlFor='for'>Mật khẩu</FormLabel>
                             <FormInput type='password' required />
-                            <FormButton type='submit'>Continue</FormButton>
-                            <Text>Forgot password</Text>
+                            <FormButton type='submit'>Tiếp theo</FormButton>
+                            <Text>Quên mật khẩu</Text>
                         </Form>
                     </FormContent>
                 </FormWrap>    
