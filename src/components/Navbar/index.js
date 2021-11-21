@@ -11,7 +11,9 @@ import {
     NavItem,
     NavLinks,
     NavBtn,
-    NavBtnLink } from './NavbarElements';
+    NavBtnLink,
+    NavLogoimg } from './NavbarElements';
+    import logored from '../../images/logored.png'
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
@@ -37,7 +39,9 @@ const Navbar = ({ toggle }) => {
         <IconContext.Provider value={{color: '#fff'}}>
         <Nav scrollNav={scrollNav}>
             <NavbarContainer>
-                <NavLogo to='/' onClick={toggleHome}>Tmaster</NavLogo>
+                <NavLogo to='/' onClick={toggleHome} > 
+                    <NavLogoimg src={logored} alt = "Tmaster"></NavLogoimg>
+                </NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
                 </MobileIcon>
