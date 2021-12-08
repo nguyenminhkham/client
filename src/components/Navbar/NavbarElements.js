@@ -118,3 +118,30 @@ export const NavBtnLink = styled(LinkR)`
         color: #010606;
     }
 `
+
+export const Dropdown = styled.div`
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+        .drc {
+            display: block;
+        }
+    }
+
+    .dropdownarow {
+            margin-left: 5px;
+        }
+`
+
+export const DropdownContent = styled.ul`
+    position: absolute;
+    display: none;
+    right: 0;
+    min-width: 120px;
+    padding: 10px;
+    z-index: 1;
+    margin: 0;
+    margin-top: 0;
+    border-radius: 5px;
+`

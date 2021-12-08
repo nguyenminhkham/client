@@ -12,8 +12,13 @@ import {
     NavLinks,
     NavBtn,
     NavBtnLink,
-    NavLogoimg } from './NavbarElements';
-    import logored from '../../images/logored.png'
+    NavLogoimg, 
+    Dropdown,
+    DropdownContent} from './NavbarElements';
+import logored from '../../images/logored.png'
+import { useDispatch, useSelector } from 'react-redux';
+import { signout } from '../../actions/userActions';
+
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
@@ -34,6 +39,14 @@ const Navbar = ({ toggle }) => {
         scroll.scrollToTop()
     }
 
+    const userSignin = useSelector((state) => state.userSignin)
+    const { userInfo } = userSignin
+
+    const dispatch = useDispatch()
+    const signoutHandler = () => {
+        dispatch(signout())
+    }
+    
     return (
         <>
         <IconContext.Provider value={{color: '#fff'}}>
@@ -87,6 +100,29 @@ const Navbar = ({ toggle }) => {
                         >Đăng ký</NavLinks>
                     </NavItem>
                 </NavMenu>
+                {userInfo ? (
+                    <Dropdown>
+                        <NavLinks
+                        to='#'
+                        smooth={true}
+                        duration={500}
+                        spy={true}
+                        exact='true'
+                        offset={-80}
+                        >{userInfo.name} <i className="fa fa-caret-down dropdownarow"></i></NavLinks>
+                        <DropdownContent className="drc">
+                            <NavLinks
+                            to='#signout'
+                            smooth={true}
+                            duration={500}
+                            spy={true}
+                            exact='true'
+                            offset={-80}
+                            onClick={signoutHandler}
+                            >Đăng xuất</NavLinks>
+                        </DropdownContent>
+                    </Dropdown>
+                ) : (
                 <NavBtn>
                     <NavBtnLink
                     to='/signin'
@@ -97,6 +133,7 @@ const Navbar = ({ toggle }) => {
                         offset={-80}
                         >Đăng nhập</NavBtnLink>
                 </NavBtn>
+                )}
             </NavbarContainer>
         </Nav>
         </IconContext.Provider>

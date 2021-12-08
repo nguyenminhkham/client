@@ -27,7 +27,7 @@ const HeroSection = () => {
             <HeroContent>
                 <HeroH1>Thiết kế cơ khí trở nên dễ dàng</HeroH1>
                 <HeroP>
-                    Đăng ký hôm nay để nhận 1,000,000 đồng.
+                    Đăng ký hôm nay để nhận 1,000,000 đồng
                 </HeroP>
                 <HeroBtnWrapper>
                     <Button to ='signup'

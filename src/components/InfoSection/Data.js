@@ -13,7 +13,8 @@ export const homeObjOne ={
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    uri: '/category'
 }
 
 export const homeObjTwo ={
@@ -31,7 +32,8 @@ export const homeObjTwo ={
     alt: 'Piggybank',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    uri: '/mypage'
 }
 
 export const homeObjThree ={
@@ -49,7 +51,8 @@ export const homeObjThree ={
     alt: 'Paper',
     dark: false,
     primary: false,
-    darkText: true
+    darkText: true,
+    uri: '/register'
 }
 
 export const homeObjFour ={
@@ -67,7 +70,8 @@ export const homeObjFour ={
     alt: 'Car',
     dark: true,
     primary: true,
-    darkText: false
+    darkText: false,
+    uri: '/download'
 }
 
 export const homeObjFive ={
