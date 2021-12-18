@@ -4,15 +4,12 @@ import ScrollToTop from '../components/ScrollToTop'
 import SignIn from '../components/Signin'
 
 const SigninPage = (props) => {
-
     const redirect = props.location.search
     ? props.location.search.split('=')[1]
     : '/';
-    console.log(props)
 
     const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo } = userSignin;
-
+    const { userInfo } = userSignin
     
     useEffect(() => {
         if (userInfo) {

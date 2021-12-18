@@ -11,7 +11,7 @@ const Register = () => {
     const [password, setPassword] = useState("")
     const [confirmpassword, setConfirmPassword] = useState('')
 
-    const userRegister = useSelector(state => state.userRegister)
+    const userRegister = useSelector((state) => state.userRegister)
     const {loading, error} = userRegister
 
     const dispatch = useDispatch()
@@ -34,7 +34,7 @@ const Register = () => {
                             <FormH1>Đăng ký</FormH1>
                             {loading && <LoadingBox></LoadingBox>}
                             {error && <MessageBox variant="danger">{error}</MessageBox>}
-                            <FormLabel htmlFor='for'>Tên đăng nhập</FormLabel>
+                            <FormLabel htmlFor='for'>Tên</FormLabel>
                             <FormInput type='text' required placeholder="Nhập tên đăng nhập..." onChange={e=>setName(e.target.value)}/>
                             <FormLabel htmlFor='for'>Email</FormLabel>
                             <FormInput type='email' required placeholder="Nhập email..." onChange={e=>setEmail(e.target.value)}/>

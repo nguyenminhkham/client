@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import Register from '../components/Register'
 import ScrollToTop from '../components/ScrollToTop'
+import Register from '../components/Register'
 
 const RegisterPage = (props) => {
     const redirect = props.location.search
         ? props.location.search.split('=')[1]
         : '/'
 
-    const userRegister = useSelector((state) => state.userRegister)
+    const userRegister = useSelector((state) => state.userSignin)
     const {userInfo} = userRegister
 
     useEffect(() => {
