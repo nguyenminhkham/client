@@ -26,7 +26,7 @@ export const NavbarContainer = styled.div`
     z-index: 1;
     width: 100%;
     padding: 0 24px;
-    min-width: 768px;
+    min-width: 375px;
 `
 
 export const NavLogo = styled(LinkR)`
@@ -132,6 +132,10 @@ export const Dropdown = styled.div`
     .dropdownarow {
             margin-left: 5px;
         }
+
+    @media screen and (max-width: 768px) {
+    display: none;
+    }
 `
 
 export const DropdownContent = styled.ul`
