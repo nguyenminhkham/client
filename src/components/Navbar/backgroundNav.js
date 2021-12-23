@@ -15,32 +15,14 @@ import {
     NavBtnLink,
     NavLogoimg, 
     Dropdown,
-    DropdownContent,
-    } from './NavbarElements';
+    DropdownContent} from './backgroundNavElements';
 import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
 import { ShoppingCartOutlined } from '@material-ui/icons'
 
 
-const Navbar = ({ toggle }) => {
-    const [scrollNav, setScrollNav] = useState(false)
-
-    const changeNav = () => {
-        if(window.scrollY >= 80) {
-            setScrollNav(true)
-        } else {
-            setScrollNav(false)
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('scroll', changeNav)
-    }, [])
-
-    const toggleHome = () => {
-        scroll.scrollToTop()
-    }
+const BackgroundNav = ({ toggle }) => {
 
     const userSignin = useSelector((state) => state.userSignin)
     const { userInfo } = userSignin
@@ -53,16 +35,16 @@ const Navbar = ({ toggle }) => {
     return (
         <>
         <IconContext.Provider value={{color: '#fff'}}>
-        <Nav scrollNav={scrollNav}>
+        <Nav >
             <NavbarContainer>
-                <NavLogo to='/' onClick={toggleHome} > 
+                <NavLogo to='/'> 
                     <NavLogoimg src={logored} alt = "Tmaster"></NavLogoimg>
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
                 </MobileIcon>
                 <NavMenu>
-                    <NavItem>
+                    {/* <NavItem>
                         <NavLinks
                         to='about'
                         smooth={true}
@@ -101,7 +83,7 @@ const Navbar = ({ toggle }) => {
                         exact='true'
                         offset={-80}
                         >Đăng ký</NavLinks>
-                    </NavItem>
+                    </NavItem> */}
                 </NavMenu>
                 {userInfo ? (
                     <Dropdown>
@@ -156,4 +138,4 @@ const Navbar = ({ toggle }) => {
     )
 }
 
-export default Navbar
+export default BackgroundNav

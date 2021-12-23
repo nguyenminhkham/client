@@ -6,7 +6,7 @@ import Register from '../components/Register'
 const RegisterPage = (props) => {
     const redirect = props.location.search
         ? props.location.search.split('=')[1]
-        : '/'
+        : '/category'
 
     const userRegister = useSelector((state) => state.userSignin)
     const {userInfo} = userRegister
