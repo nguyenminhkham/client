@@ -6,9 +6,9 @@ import Productdetail from '../components/Productdetail'
 const ProductdetailPage = () => {
     return (
         <>
-            <BackgroundNav /> 
+            <BackgroundNav/> 
             <Productdetail/>
-            <Footer />
+            <Footer/>
         </>
     )
 }

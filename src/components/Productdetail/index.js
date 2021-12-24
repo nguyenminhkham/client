@@ -29,7 +29,7 @@ const Productdetail = () => {
             try {
                 const res = await axios.get("https://banvecokhi.com/api/products/find/"+id)
                 setProduct(res.data)
-            }catch(err){}
+            }catch{}
         }
         getProduct()
     }, [id])
