@@ -16,7 +16,7 @@ function App() {
         <Route path='/signin' component={SigninPage} exact />
         <Route path='/register' component={RegisterPage} exact />
         <Route path='/category' component={CategoryPage} exact />
-        <Route path='/productdetail' component={ProductdetailPage} exac/> 
+        <Route path='/product' component={ProductdetailPage} exac/> 
       </Switch>
     </Router>
   );

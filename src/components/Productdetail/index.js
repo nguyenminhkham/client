@@ -1,7 +1,8 @@
-import React from 'react'
+import React,  { useEffect, useState } from 'react'
 import Navbar from '../Navbar/backgroundNav'
 import Footer from '../Footer/index'
 import { Announcement } from '@material-ui/icons'
+import { useLocation } from 'react-router-dom'
 import {
     Container,
     Wrapper,
@@ -15,35 +16,38 @@ import {
     AddContainer,
     Button
 } from './productdetailElentments'
+import axios from 'axios'
+import NumberFormat from 'react-number-format';
 
 const Productdetail = () => {
+    const location = useLocation()
+    const id = location.pathname.split("/")[2]
+    const [product, setProduct] = useState({})
+    
+    useEffect(() => {
+        const getProduct = async () => {
+            try {
+                const res = await axios.get("https://banvecokhi.com/api/products/find/"+id)
+                setProduct(res.data)
+            }catch(err){}
+        }
+        getProduct()
+    }, [id])
+
     return (
         <Container>
             <Navbar/>
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
-                    <Image src="https://i.ibb.co/YZGFSPY/bophanmaydannhan4-1255x1024.jpg"/>
+                    <Image src={product.img}/>
                 </ImgContainer>
                 <InfoContainer>
-                    <Title>Chuyền dán nhãn tự động</Title>
+                    <Title>{product.title}</Title>
                     <Desc>
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
-                        Dây chuyền sản xuất dán nhãn tự động
+                        {product.desc}
                     </Desc>
-                    <Price>10,000,000 VND</Price>
+                    <Price><NumberFormat value={product.price} displayType={'text'} thousandSeparator={true} suffix={' VND'} /></Price>
                     <FilterContainer>
                     </FilterContainer>
                     <AddContainer>

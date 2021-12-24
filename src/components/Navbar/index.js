@@ -16,6 +16,7 @@ import {
     NavLogoimg, 
     Dropdown,
     DropdownContent,
+    NavRight,
     } from './NavbarElements';
 import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
@@ -104,26 +105,25 @@ const Navbar = ({ toggle }) => {
                     </NavItem>
                 </NavMenu>
                 {userInfo ? (
+                <NavRight>
+                    <NavLinks>
+                        <Badge badgeContent={4} color="primary">
+                            <ShoppingCartOutlined/>
+                        </Badge>
+                    </NavLinks>
                     <Dropdown>
                         <NavMenu>
-                        <NavItem>
-                        <NavLinks>
-                            <Badge badgeContent={4} color="primary">
-                                <ShoppingCartOutlined/>
-                            </Badge>
-                        </NavLinks>
-                        </NavItem>
-                        <NavItem>
-                        <NavLinks
-                        to='#'
-                        smooth={true}
-                        duration={500}
-                        spy={true}
-                        exact='true'
-                        offset={-80}
-                        >{userInfo.name} <i className="fa fa-caret-down dropdownarow"></i>
-                        </NavLinks>
-                        </NavItem>
+                            <NavItem>
+                                <NavLinks
+                                to='#'
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                                >{userInfo.name} <i className="fa fa-caret-down dropdownarow"></i>
+                                </NavLinks>
+                            </NavItem>
                         </NavMenu>
                         <DropdownContent className="drc">
                             <NavLinks
@@ -137,6 +137,7 @@ const Navbar = ({ toggle }) => {
                             >Đăng xuất</NavLinks>
                         </DropdownContent>
                     </Dropdown>
+                </NavRight>
                 ) : (
                 <NavBtn>
                     <NavBtnLink

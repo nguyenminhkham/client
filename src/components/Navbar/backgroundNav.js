@@ -15,7 +15,8 @@ import {
     NavBtnLink,
     NavLogoimg, 
     Dropdown,
-    DropdownContent} from './backgroundNavElements';
+    DropdownContent,
+    NavRight} from './backgroundNavElements';
 import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
@@ -86,16 +87,13 @@ const BackgroundNav = ({ toggle }) => {
                     </NavItem> */}
                 </NavMenu>
                 {userInfo ? (
-                    <Dropdown>
-                        <NavMenu>
-                        <NavItem>
+                <NavRight>
                         <NavLinks>
                             <Badge badgeContent={4} color="primary">
                                 <ShoppingCartOutlined/>
                             </Badge>
                         </NavLinks>
-                        </NavItem>
-                        <NavItem>
+                    <Dropdown>
                         <NavLinks
                         to='#'
                         smooth={true}
@@ -105,8 +103,6 @@ const BackgroundNav = ({ toggle }) => {
                         offset={-80}
                         >{userInfo.name} <i className="fa fa-caret-down dropdownarow"></i>
                         </NavLinks>
-                        </NavItem>
-                        </NavMenu>
                         <DropdownContent className="drc">
                             <NavLinks
                             to='#signout'
@@ -119,6 +115,7 @@ const BackgroundNav = ({ toggle }) => {
                             >Đăng xuất</NavLinks>
                         </DropdownContent>
                     </Dropdown>
+                </NavRight>
                 ) : (
                 <NavBtn>
                     <NavBtnLink

@@ -119,6 +119,10 @@ export const NavBtnLink = styled(LinkR)`
     }
 `
 
+export const NavRight = styled.div`
+    display: flex;
+`
+
 export const Dropdown = styled.div`
     display: inline-block;
     position: relative;

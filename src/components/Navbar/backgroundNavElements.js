@@ -118,7 +118,9 @@ export const NavBtnLink = styled(LinkR)`
         color: #010606;
     }
 `
-
+export const NavRight = styled.div`
+    display: flex;
+`
 export const Dropdown = styled.div`
     display: inline-block;
     position: relative;
