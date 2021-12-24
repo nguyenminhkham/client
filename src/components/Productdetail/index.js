@@ -36,7 +36,6 @@ const Productdetail = () => {
 
     return (
         <Container>
-            <Navbar/>
             <Announcement/>
             <Wrapper>
                 <ImgContainer>
@@ -55,7 +54,6 @@ const Productdetail = () => {
                     </AddContainer>
                 </InfoContainer>
             </Wrapper>
-            <Footer/>
         </Container>
     )
 }
