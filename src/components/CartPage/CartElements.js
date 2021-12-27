@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const Body = styled.div`
-    margin: 0;
-    height: 100vh;
-`
-
 export const Rowtop = styled.div`
     margin-top: 80px;
     align-items: flex-start;
+`
+
+export const Body = styled.div`
+    margin: 0;
+    height: 100vh;
 `
 
 export const GridContainer = styled.div`

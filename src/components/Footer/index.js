@@ -9,6 +9,7 @@ const Footer = () => {
         scroll.scrollToTop()
     }
     return (
+        <>
         <FooterContainer>
             <FooterWrap>
                 <FooterLinksContainer>
@@ -61,6 +62,7 @@ const Footer = () => {
                 </SocialMedia>
             </FooterWrap>
         </FooterContainer>
+        </>
     )
 }
 

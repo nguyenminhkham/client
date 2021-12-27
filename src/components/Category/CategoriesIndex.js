@@ -19,10 +19,10 @@ const Categories = () => {
         <Container>
             {loading? (
                 <LoadingBox></LoadingBox>
-            ) : error? (
-                <MessageBox variant="danger">{error}</MessageBox>
-            ) : (
-                <>
+                ) : error? (
+                    <MessageBox variant="danger">{error}</MessageBox>
+                    ) : (
+                        <>
                 {products.map((product)=>(
                     <Category product={product} key={product._id}/>
                     ))}

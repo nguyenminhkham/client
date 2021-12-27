@@ -1,24 +1,31 @@
 import { SearchOutlined, ShoppingCartOutlined } from '@material-ui/icons'
 import React from 'react'
 import { Link } from 'react-router-dom'
-import {Container, Image, Circle, Info, Icon} from './CategoryElements'
-
+import {Container, Image, Circle, Icon, Name, GridContainer, Flex} from './CategoryElements'
 const Category = ({product}) => {
     return (
+        <>
+        <GridContainer>
+            <Flex>
         <Container>
-            <Circle/>
+            {/* <Circle/> */}
             <Image src={product.img}/>
-            <Info to={`/product/${product._id}`}>
+            {/* <Info to={`/product/${product._id}`}>
                 <Icon>
-                    <ShoppingCartOutlined/>
+                <ShoppingCartOutlined/>
                 </Icon>
                 <Icon>
-                    <Link to={`/product/${product._id}`}>
-                        <SearchOutlined/>
-                    </Link>
+                <Link to={`/product/${product._id}`}>
+                <SearchOutlined/>
+                </Link>
                 </Icon>
-            </Info>
+            </Info> */}
+            <Name to={`/product/${product._id}`}>{product.title}</Name><br/>
+            <Name to={`/product/${product._id}`}>by Kham</Name>
         </Container>
+            </Flex>
+        </GridContainer>
+            </>
     )
 }
 
