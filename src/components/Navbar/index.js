@@ -17,15 +17,18 @@ import {
     Dropdown,
     DropdownContent,
     NavRight,
+    NavCart
     } from './NavbarElements';
 import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
-import { ShoppingCartOutlined } from '@material-ui/icons'
+import { ShoppingCartOutlined, StarTwoTone } from '@material-ui/icons'
 
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
+    const cart = useSelector((state) => state.cart)
+    const {cartItems} = cart
 
     const changeNav = () => {
         if(window.scrollY >= 80) {
@@ -71,7 +74,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Về chúng tôi</NavLinks>
+                        >Sản phẩm</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks
@@ -81,7 +84,7 @@ const Navbar = ({ toggle }) => {
                         spy={true}
                         exact='true'
                         offset={-80}
-                        >Sản phẩm</NavLinks>
+                        >Khám phá</NavLinks>
                     </NavItem>
                     <NavItem>
                         <NavLinks
@@ -106,11 +109,14 @@ const Navbar = ({ toggle }) => {
                 </NavMenu>
                 {userInfo ? (
                 <NavRight>
-                    <NavLinks>
-                        <Badge badgeContent={4} color="primary">
-                            <ShoppingCartOutlined/>
-                        </Badge>
-                    </NavLinks>
+                    <NavCart to='cart'>
+                        {cartItems.length > 0 && (
+                            <Badge badgeContent={cartItems.length} color="primary">
+                                <ShoppingCartOutlined/>
+                            </Badge>
+                        )}
+
+                    </NavCart>
                     <Dropdown>
                         <NavMenu>
                             <NavItem>

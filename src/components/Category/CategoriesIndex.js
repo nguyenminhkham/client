@@ -1,27 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { Container } from './CategoriesElements'
-import {popularCategories} from '../../data'
 import Category from './CategoryIndex'
-import axios from "axios"
+import LoadingBox from '../LoadingBox'
+import MessageBox from '../MessageBox'
+import { listProducts } from '../../actions/productActions'
+import { useDispatch, useSelector} from 'react-redux'
 
 const Categories = () => {
-    const [products, setProducts] = useState([])
-
+    const dispatch = useDispatch()
+    const productList = useSelector((state) => state.productList)
+    const { loading, error, products } = productList
     useEffect(() => {
-        const getProducts = async () => {
-            try {
-                const res = await axios.get("https://banvecokhi.com/api/products")
-                console.log(res.data)
-                setProducts(res.data)
-            } catch(err){}
-        }
-        getProducts()
-    },[])
+        dispatch(listProducts())
+    }, [dispatch])
+
+            
     return (
         <Container>
-            {products.map((item)=>(
-                <Category item={item} key={item.id}/>
-            ))}
+            {loading? (
+                <LoadingBox></LoadingBox>
+            ) : error? (
+                <MessageBox variant="danger">{error}</MessageBox>
+            ) : (
+                <>
+                {products.map((product)=>(
+                    <Category product={product} key={product._id}/>
+                    ))}
+                </>
+            )}
         </Container>
     )
 }

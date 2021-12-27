@@ -16,7 +16,8 @@ import {
     NavLogoimg, 
     Dropdown,
     DropdownContent,
-    NavRight} from './backgroundNavElements';
+    NavRight,
+NavCart} from './backgroundNavElements';
 import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
@@ -25,6 +26,8 @@ import { ShoppingCartOutlined } from '@material-ui/icons'
 
 const BackgroundNav = ({ toggle }) => {
 
+    const cart = useSelector((state) => state.cart)
+    const {cartItems} = cart
     const userSignin = useSelector((state) => state.userSignin)
     const { userInfo } = userSignin
 
@@ -88,11 +91,13 @@ const BackgroundNav = ({ toggle }) => {
                 </NavMenu>
                 {userInfo ? (
                 <NavRight>
-                        <NavLinks>
-                            <Badge badgeContent={4} color="primary">
+                        <NavCart to='../cart'>
+                        {cartItems.length > 0 && (
+                            <Badge badgeContent={cartItems.length} color="primary">
                                 <ShoppingCartOutlined/>
                             </Badge>
-                        </NavLinks>
+                        )}
+                        </NavCart>
                     <Dropdown>
                         <NavLinks
                         to='#'
