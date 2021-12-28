@@ -11,6 +11,20 @@ export const Wrapper = styled.div`
     display: flex;
     width: 100%;
     margin-top: -120px;
+
+    canvas {
+        height: 40vh;
+    }
+`
+
+export const Model = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    size: cover;
+    height: 80vh;
+    object-fit: cover;
+    display: ${props => props.current === 10 ? 'block' : 'none'};
 `
 
 export const ArrowLeft = styled.div`
@@ -41,6 +55,7 @@ export const Image = styled.img`
     object-fit: cover;
     margin-left: auto;
     margin-right: auto;
+    display: ${props => props.current === 10 ? 'none' : 'block'};
 `
 
 export const InfoContainer = styled.div`
@@ -93,10 +108,13 @@ export const FilterSize = styled.select`
 export const FilterSizeOption = styled.option``
 
 export const AddContainer = styled.div`
-    width: 50%;
+    width: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-right: -30px;
+    margin-top: 10px;
+    height: 100px;
 `
 
 export const AmountContainer = styled.div`

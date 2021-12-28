@@ -18,7 +18,7 @@ function App() {
         <Route path='/register' component={RegisterPage} exact />
         <Route path='/category' component={CategoryPage} exact />
         <Route path='/product' component={ProductdetailPage}/> 
-        <Route path='/cart/:id?' component={CartPage}/> 
+        <Route path='/cart/:id?' component={CartPage}/>
       </Switch>
     </Router>
   );
