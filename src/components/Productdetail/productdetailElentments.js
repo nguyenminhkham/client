@@ -1,20 +1,46 @@
 import styled from "styled-components";
+import {Link as LinkR} from 'react-router-dom'
 
-export const Container = styled.div``
+
+export const Container = styled.div`
+
+`
 
 export const Wrapper = styled.div`
     padding: 50px;
     display: flex;
+    width: 100%;
+    margin-top: -120px;
 `
+
+export const ArrowLeft = styled.div`
+margin-top: 40vh;
+`
+
+export const ArrowRight = styled.div`
+margin-top: 40vh;
+`
+
+export const ArrowBacka = styled(LinkR)`
+    margin-top: 100px;
+    display: flex;
+    text-decoration: none;
+    color: black;
+`
+
 export const ImgContainer = styled.div`
     flex: 1;
+    display: flex;
+    margin-top: 50px;
 `
 
 export const Image = styled.img`
-width: 100%;
+    width: auto;
     size: cover;
-    height: 90vh;
+    height: 80vh;
     object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
 `
 
 export const InfoContainer = styled.div`
