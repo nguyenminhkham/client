@@ -7,55 +7,75 @@ export const Container = styled.div`
 `
 
 export const Wrapper = styled.div`
-    padding: 50px;
     display: flex;
     width: 100%;
-    margin-top: -120px;
+    /* margin-top: -120px; */
+`
 
-    canvas {
-        height: 40vh;
+export const ArrowLeft = styled.div`
+margin-top: 40vh;
+
+@media screen and (max-width: 768px) {
+    margin-top: 18vh;
+    }
+`
+
+export const ArrowRight = styled.div`
+margin-top: 40vh;
+
+@media screen and (max-width: 768px) {
+    margin-top: 18vh;
+    }
+`
+
+export const ArrowBacka = styled(LinkR)`
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    width: auto;
+`
+
+export const ArrowBackb = styled(LinkR)`
+    display: flex;
+    text-decoration: none;
+    color: black;
+    width: auto;
+`
+
+export const ImgContainer = styled.div`
+    flex: 1;
+    display: flex;
+`
+
+export const Image = styled.img`
+    display: block;
+    width: auto;
+    size: cover;
+    height: 80vh;
+    object-fit: contain;
+    margin-left: auto;
+    margin-right: auto;
+    display: ${props => props.current === 10 ? 'none' : 'block'};
+
+    @media screen and (max-width: 768px) {
+        max-height: 40vh;
+        max-width: 100%;
+        margin-top: 0;
     }
 `
 
 export const Model = styled.div`
     margin-left: auto;
     margin-right: auto;
-    width: auto;
+    width: 100%;
     size: cover;
     height: 80vh;
     object-fit: cover;
     display: ${props => props.current === 10 ? 'block' : 'none'};
-`
 
-export const ArrowLeft = styled.div`
-margin-top: 40vh;
-`
-
-export const ArrowRight = styled.div`
-margin-top: 40vh;
-`
-
-export const ArrowBacka = styled(LinkR)`
-    margin-top: 100px;
-    display: flex;
-    text-decoration: none;
-    color: black;
-`
-
-export const ImgContainer = styled.div`
-    flex: 1;
-    display: flex;
-    margin-top: 50px;
-`
-
-export const Image = styled.img`
-    width: auto;
-    size: cover;
-    height: 80vh;
-    object-fit: cover;
-    margin-left: auto;
-    margin-right: auto;
-    display: ${props => props.current === 10 ? 'none' : 'block'};
+    @media screen and (max-width: 768px) {
+        height: 40vh;
+    }
 `
 
 export const InfoContainer = styled.div`

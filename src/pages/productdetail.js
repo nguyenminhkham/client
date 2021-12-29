@@ -19,6 +19,7 @@ import {
     ArrowRight,
     ArrowBacka,
     Model,
+    ArrowBackb,
 } from '../components/Productdetail/productdetailElentments'
 import NumberFormat from 'react-number-format';
 import { useDispatch, useSelector } from 'react-redux'
@@ -94,9 +95,11 @@ const ProductdetailPage = (props) => {
                     ) : (
             <>
             <BackgroundNav/> 
-                    <ArrowBacka to='../category'>
-                        <ArrowBack/>
+                    <ArrowBacka >
+                        <ArrowBackb to='../category'>
+                        <ArrowBack />
                         <p>Quay lại</p>
+                        </ArrowBackb>
                     </ArrowBacka>
             <Container>
             <Wrapper>
@@ -130,11 +133,11 @@ const ProductdetailPage = (props) => {
                     <FilterContainer>
                     </FilterContainer>
                 </InfoContainer> */}
+            </Wrapper>
+        </Container>
                 <AddContainer>
                     <Button onClick={addToCartHandler}>THÊM VÀO GIỎ</Button>
                 </AddContainer>
-            </Wrapper>
-        </Container>
             <Footer/>
             </>
             )}

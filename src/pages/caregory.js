@@ -6,8 +6,8 @@ import BackgroundNav from '../components/Navbar/backgroundNav'
 const CaregoryPage = () => {
     return (
         <>
-        <Body>
             <BackgroundNav />
+        <Body>
                 <GridContainer>
             <Categories />
             <GridFooter>

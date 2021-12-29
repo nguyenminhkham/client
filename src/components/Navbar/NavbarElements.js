@@ -54,6 +54,10 @@ export const NavCart = styled(LinkR)`
     &.active {
         border-bottom: 3px solid #01bf71;
     }
+
+    @media screen and (max-width: 768px) {
+        margin-right: 40px;
+    }
 `
 
 export const NavLogoimg = styled.img`
