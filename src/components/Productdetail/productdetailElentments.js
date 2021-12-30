@@ -157,6 +157,12 @@ export const NameItem = styled.div`
     font-size: 20px;
     margin-left: 20px;
     line-height: 50px;
+
+    @media screen and (max-width: 630px) {
+        font-size: 14px;
+        line-height: 20px;
+        margin-top: 11.5px;
+    }
 `
 
 export const NameAuthor = styled.div`
@@ -165,6 +171,10 @@ export const NameAuthor = styled.div`
     font-size: 14px;
     margin-left: 5px;
     line-height: 50px;
+
+    @media screen and (max-width: 630px) {
+        line-height: 40px;
+    }
 `
 
 export const RightAdd = styled.div`
@@ -204,6 +214,10 @@ export const NameItemby = styled.div`
     line-height: 50px;
     margin-left: 5px;
     font-size: 14px;
+
+    @media screen and (max-width: 630px) {
+        line-height: 40px;
+    }
 `
 
 
@@ -215,6 +229,10 @@ export const PriceItem = styled.div`
     font-size: 20px;
     font-weight: 700;
     margin-right: 10px;
+
+    @media screen and (max-width: 630px) {
+        font-size: 16px;
+    }
 
 `
 
