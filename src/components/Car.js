@@ -10,7 +10,7 @@ export default function Model({ ...props }) {
   const { nodes, materials } = useGLTF('/car.gltf')
   return (
     <group ref={group} {...props} dispose={null}>
-      <group position={[0, 0.4, 0]}>
+      <group rotation={[0.2, -0.3, 0]} position={[0, 0.4, 0]}>
         <mesh geometry={nodes.Mesh089.geometry} material={materials.GreyBlack} />
         <mesh geometry={nodes.Mesh089_1.geometry} material={materials.Translucent} />
         <mesh geometry={nodes.Mesh089_2.geometry} material={materials.Grey} />

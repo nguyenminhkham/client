@@ -20,6 +20,13 @@ import {
     ArrowBacka,
     Model,
     ArrowBackb,
+    LeftAdd,
+    RightAdd,
+    AddContainerSub,
+    NameItem,
+    NameItemby,
+    PriceItem,
+    NameAuthor,
 } from '../components/Productdetail/productdetailElentments'
 import NumberFormat from 'react-number-format';
 import { useDispatch, useSelector } from 'react-redux'
@@ -30,6 +37,7 @@ import { Canvas } from '@react-three/fiber'
 import Box from '../components/Box'
 import { OrbitControls } from '@react-three/drei'
 import Car from '../components/Car'
+import Categories from '../components/Category/CategoriesIndex'
 
 
 
@@ -135,9 +143,21 @@ const ProductdetailPage = (props) => {
                 </InfoContainer> */}
             </Wrapper>
         </Container>
-                <AddContainer>
-                    <Button onClick={addToCartHandler}>THÊM VÀO GIỎ</Button>
-                </AddContainer>
+
+                    <AddContainer>
+                        <AddContainerSub>
+                    <LeftAdd>
+                        <NameItem>{product.title}</NameItem>
+                        <NameItemby>by</NameItemby>
+                        <NameAuthor>Kham</NameAuthor>
+                    </LeftAdd>
+                    <RightAdd>
+                        <Button onClick={addToCartHandler}>Thêm vào Giỏ</Button>
+                        <PriceItem className='right'>{product.price} VND</PriceItem>
+                    </RightAdd>
+                        </AddContainerSub>
+                    </AddContainer>
+            <Categories />
             <Footer/>
             </>
             )}

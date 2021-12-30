@@ -127,16 +127,6 @@ export const FilterSize = styled.select`
 
 export const FilterSizeOption = styled.option``
 
-export const AddContainer = styled.div`
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-right: -30px;
-    margin-top: 10px;
-    height: 100px;
-`
-
 export const AmountContainer = styled.div`
     display: flex;
     align-items: center;
@@ -153,17 +143,98 @@ export const Amount = styled.span`
     justify-content: center;
     margin: 0 5px;
 `
+export const LeftAdd = styled.div`
+    float: left;
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    `
 
-export const Button = styled.button`
-    padding: 15px;
-    border: 2px solid #2FC712;
-    background-color: white;
-    cursor: pointer;
-    font-weight: 500;
+export const NameItem = styled.div`
+    font-weight: bold;
+    color: white;
+    width: auto;
+    font-size: 20px;
+    margin-left: 20px;
+    line-height: 50px;
+`
 
-    &:hover{
-        background-color: #96E287;
+export const NameAuthor = styled.div`
+    color: #CC0000;
+    width: auto;
+    font-size: 14px;
+    margin-left: 5px;
+    line-height: 50px;
+`
+
+export const RightAdd = styled.div`
+    float: right;
+    box-sizing: border-box;
+    width: 50%;
+    display: inline-block;
+`
+
+export const AddContainer = styled.div`
+    width: auto;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;;
+    margin-top: 10px;
+    height: 50px;
+    box-sizing: border-box;
+    justify-content: left;
+    align-items: center;
+
+    @media screen and (max-width: 630px) {
+        height: 80px;
     }
 `
+
+export const AddContainerSub = styled.div`
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    width: 100%;
+`
+
+export const NameItemby = styled.div`
+    color: white;
+    line-height: 50px;
+    margin-left: 5px;
+    font-size: 14px;
+`
+
+
+export const PriceItem = styled.div`
+    color: #01BF71;
+    float: right;
+    height: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 10px;
+
+`
+
+export const Button = styled.button`
+    padding: 5px;
+    background-color: #01BF71;
+    cursor: pointer;
+    font-weight: 300;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    float: right;
+    margin-right: 20px;
+    margin-top: 11.5px;
+
+    &:hover{
+        background-color: #028a52;
+    }
+`
+
+
 
 
