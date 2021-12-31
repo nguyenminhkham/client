@@ -253,6 +253,13 @@ export const Button = styled.button`
     }
 `
 
+export const Hidden = styled.div`
+    overflow-y: hidden;
+    height: ${({ isOpencart }) => (isOpencart ? '100vh' : 'auto')};
+    /* background: red; */
+`
+
+
 
 
 

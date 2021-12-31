@@ -14,9 +14,6 @@ import {
     Min30,
     Price,
     Removebtn,
-    GridContainer,
-    GridFooter,
-    Body
 } from '../components/CartPage/CartElements'
 import BackgroundNav from '../components/Navbar/backgroundNav';
 import Footer from '../components/Footer';
@@ -39,12 +36,10 @@ const CartPage = (props) => {
     }
     return (
         <>
-        <Body>
-        <GridContainer>  
         <BackgroundNav />
+                <Cart>Giỏ hàng</Cart>
         <Rowtop >
             <Col2>
-                <Cart>Giỏ hàng</Cart>
                 {cartItems.length === 0 ? (<MessageBox>
                     Giỏ hàng trống. <Link to ="/category">Đến trang sản phẩm</Link>
                 </MessageBox>
@@ -75,11 +70,7 @@ const CartPage = (props) => {
         } 
             </Col2>
             </Rowtop>
-            <GridFooter>
-                <Footer />
-            </GridFooter>
-        </GridContainer>
-        </Body>
+            <Footer />
         </>
     )
 }

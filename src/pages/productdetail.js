@@ -27,6 +27,7 @@ import {
     NameItemby,
     PriceItem,
     NameAuthor,
+    Hidden,
 } from '../components/Productdetail/productdetailElentments'
 import NumberFormat from 'react-number-format';
 import { useDispatch, useSelector } from 'react-redux'
@@ -38,6 +39,10 @@ import Box from '../components/Box'
 import { OrbitControls } from '@react-three/drei'
 import Car from '../components/Car'
 import Categories from '../components/Category/CategoriesIndex'
+import { addToCart } from '../actions/cartActions'
+import Cartpayment from '../components/Cartpayment'
+import Sidebar from '../components/Sidebar'
+
 
 
 
@@ -69,8 +74,6 @@ const ProductdetailPage = (props) => {
         }
     }
 
-    console.log(current)
-
     useEffect(() => {
             dispatch(detailsProduct(productId))
     }, [dispatch, productId])
@@ -91,9 +94,31 @@ const ProductdetailPage = (props) => {
     // }, [id])
     
     const addToCartHandler = () => {
-        props.history.push(`/cart/${productId}`)
+        // props.history.push(`/cart/${productId}`)
+        dispatch(addToCart(productId))
+        }
+
+    const [isOpen, setIsOpen] = useState(false)
+    const [isOpencart, setIsOpencart] = useState(false)
+
+    const togglecart = () => {
+        setIsOpencart(!isOpencart)
     }
 
+    const toggle = () => {
+        setIsOpen(!isOpen)
+    }
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        console.log(position)
+        setScrollPosition(position);
+    };
+    
+    
+    
     return (
         <>  
             {loading ? (
@@ -102,7 +127,10 @@ const ProductdetailPage = (props) => {
                     <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
             <>
-            <BackgroundNav/> 
+            <Sidebar isOpen={isOpen} toggle={toggle} />
+            <Cartpayment isOpencart={isOpencart} togglecart={togglecart}/>
+            <Hidden isOpencart={isOpencart}>
+            <BackgroundNav togglecart={togglecart} toggle={toggle} handleScroll={handleScroll}/> 
                     <ArrowBacka >
                         <ArrowBackb to='../category'>
                         <ArrowBack />
@@ -115,9 +143,9 @@ const ProductdetailPage = (props) => {
                     <ArrowBackIos fontSize='large' onClick={prevSlide}/>
                 </ArrowLeft>
                 <ImgContainer>
-                    <Image src={product.img[current]} current={current}/>
+                    <Image src={product.img[current]} current={current} />
 
-                    <Model current={current}>
+                    <Model current={current} >
                     <Canvas className='canvas'>
                         <OrbitControls enableZoom={true}/>
                         <ambientLight intensity={0.5} />
@@ -153,12 +181,13 @@ const ProductdetailPage = (props) => {
                     </LeftAdd>
                     <RightAdd>
                         <Button onClick={addToCartHandler}>Thêm vào Giỏ</Button>
-                        <PriceItem className='right'>{product.price} VND</PriceItem>
+                        <PriceItem className='right'><NumberFormat value={product.price} displayType={'text'} thousandSeparator={true} suffix={' VND'} /></PriceItem>
                     </RightAdd>
                         </AddContainerSub>
                     </AddContainer>
             <Categories />
             <Footer/>
+            </Hidden>
             </>
             )}
         </>

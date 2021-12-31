@@ -24,7 +24,7 @@ import { signout } from '../../actions/userActions';
 import { ShoppingCartOutlined } from '@material-ui/icons'
 
 
-const BackgroundNav = ({ toggle }) => {
+const BackgroundNav = ({ toggle, togglecart}) => {
 
     const cart = useSelector((state) => state.cart)
     const {cartItems} = cart
@@ -35,7 +35,7 @@ const BackgroundNav = ({ toggle }) => {
     const signoutHandler = () => {
         dispatch(signout())
     }
-    
+
     return (
         <>
         <IconContext.Provider value={{color: '#fff'}}>
@@ -91,9 +91,9 @@ const BackgroundNav = ({ toggle }) => {
                 </NavMenu>
                 {userInfo ? (
                 <NavRight>
-                        <NavCart to='../cart'>
+                        <NavCart >
                         {cartItems.length > 0 && (
-                            <Badge badgeContent={cartItems.length} color="primary">
+                            <Badge onClick={togglecart} badgeContent={cartItems.length} color="primary">
                                 <ShoppingCartOutlined/>
                             </Badge>
                         )}
