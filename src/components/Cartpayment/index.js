@@ -76,8 +76,8 @@ const Cartpayment = ({isOpencart, togglecart}) => {
                     </CompanyInfo>
                     <ClientInfo>
                         <p className='bold'>Thông tin khách hàng</p>
-                        <p>Tên khách hàng: {userInfo.name}</p>
-                        <p>Địa chỉ email: {userInfo.email}</p>
+                        <p>Tên khách hàng: client1</p>
+                        <p>Địa chỉ email: client@example.com</p>
                         <p>Sđt: 0909xxxxxx</p>
                         <p>Địa chỉ: Tp. HCM</p>
                     </ClientInfo>
