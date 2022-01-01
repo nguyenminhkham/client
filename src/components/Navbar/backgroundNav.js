@@ -18,10 +18,10 @@ import {
     DropdownContent,
     NavRight,
 NavCart} from './backgroundNavElements';
-import logored from '../../images/logored.png'
+// import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
-import { ShoppingCartOutlined } from '@material-ui/icons'
+import { LocalDiningRounded, ShoppingCartOutlined } from '@material-ui/icons'
 
 
 const BackgroundNav = ({ toggle, togglecart}) => {
@@ -42,7 +42,7 @@ const BackgroundNav = ({ toggle, togglecart}) => {
         <Nav >
             <NavbarContainer>
                 <NavLogo to='/'> 
-                    <NavLogoimg src={logored} alt = "Tmaster"></NavLogoimg>
+                    <NavLogoimg src='logored.png' alt = "Tmaster"></NavLogoimg>
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />
