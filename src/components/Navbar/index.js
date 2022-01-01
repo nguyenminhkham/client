@@ -23,6 +23,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
 import { ShoppingCartOutlined, StarTwoTone } from '@material-ui/icons'
+import logored from '../../images/logored.png'
 
 
 const Navbar = ({ toggle, togglecart }) => {
@@ -60,7 +61,7 @@ const Navbar = ({ toggle, togglecart }) => {
         <Nav scrollNav={scrollNav}>
             <NavbarContainer>
                 <NavLogo to='/' onClick={toggleHome} > 
-                    <NavLogoimg src='logored.png' alt = "Tmaster"></NavLogoimg>
+                    <NavLogoimg src={logored} alt = "Tmaster"></NavLogoimg>
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />

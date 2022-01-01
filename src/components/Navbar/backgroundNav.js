@@ -22,6 +22,7 @@ NavCart} from './backgroundNavElements';
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
 import { LocalDiningRounded, ShoppingCartOutlined } from '@material-ui/icons'
+import logored from '../../images/logored.png'
 
 
 const BackgroundNav = ({ toggle, togglecart}) => {
@@ -42,7 +43,7 @@ const BackgroundNav = ({ toggle, togglecart}) => {
         <Nav >
             <NavbarContainer>
                 <NavLogo to='/'> 
-                    <NavLogoimg src='logored.png' alt = "Tmaster"></NavLogoimg>
+                    <NavLogoimg src={logored} alt = "Tmaster"></NavLogoimg>
                 </NavLogo>
                 <MobileIcon onClick={toggle}>
                     <FaBars />

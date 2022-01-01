@@ -7,7 +7,8 @@ export const Rowtop = styled.div`
 
 export const Body = styled.div`
     margin: 0;
-    height: 100vh;
+    height: calc(100vh - 80px);
+    overflow-y: ${({ isOpencart }) => (isOpencart ? 'hidden' : 'none')};
 `
 
 export const GridContainer = styled.div`

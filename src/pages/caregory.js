@@ -19,17 +19,18 @@ const CaregoryPage = () => {
     return (
         <>
             <Cartpayment isOpencart={isOpencart} togglecart={togglecart}/>
-            <Hidden isOpencart={isOpencart}>
             <BackgroundNav togglecart={togglecart} toggle={toggle}/>
-        <Body>
+        <Body isOpencart={isOpencart}>
+            <Hidden isOpencart={isOpencart}>
                 <GridContainer>
             <Categories />
             <GridFooter>
             <Footer />
             </GridFooter>
                 </GridContainer>
-        </Body>
+        <Footer/>
         </Hidden>
+        </Body>
     </>
     )
 }
