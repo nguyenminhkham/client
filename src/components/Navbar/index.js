@@ -25,7 +25,7 @@ import { signout } from '../../actions/userActions';
 import { ShoppingCartOutlined, StarTwoTone } from '@material-ui/icons'
 
 
-const Navbar = ({ toggle }) => {
+const Navbar = ({ toggle, togglecart }) => {
     const [scrollNav, setScrollNav] = useState(false)
     const cart = useSelector((state) => state.cart)
     const {cartItems} = cart
@@ -109,9 +109,9 @@ const Navbar = ({ toggle }) => {
                 </NavMenu>
                 {userInfo ? (
                 <NavRight>
-                    <NavCart to='cart'>
+                    <NavCart >
                         {cartItems.length > 0 && (
-                            <Badge badgeContent={cartItems.length} color="primary">
+                            <Badge onClick={togglecart} badgeContent={cartItems.length} color="primary">
                                 <ShoppingCartOutlined/>
                             </Badge>
                         )}

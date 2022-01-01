@@ -144,7 +144,6 @@ const ProductdetailPage = (props) => {
                 </ArrowLeft>
                 <ImgContainer>
                     <Image src={product.img[current]} current={current} />
-
                     <Model current={current} >
                     <Canvas className='canvas'>
                         <OrbitControls enableZoom={true}/>
@@ -155,7 +154,6 @@ const ProductdetailPage = (props) => {
                         </Suspense>
                     </Canvas>
                     </Model>
-
                 </ImgContainer>
                 <ArrowRight>
                     <ArrowForwardIos fontSize='large' onClick={nextSlide}/>
@@ -171,7 +169,6 @@ const ProductdetailPage = (props) => {
                 </InfoContainer> */}
             </Wrapper>
         </Container>
-
                     <AddContainer>
                         <AddContainerSub>
                     <LeftAdd>

@@ -130,14 +130,101 @@ export const CloseIconItem = styled(IoClose)`
         min-height: 200px;
         background: white;
         border-radius: 3px;
+
+        p {
+            font-size: 14px;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
     `
+
+    export const CompanyInfo = styled.div`
+        margin-top: 10px;
+        width: 50%;
+        float: left;
+        height: 200px;
+        /* background: red; */
+    `
+
+    export const ClientInfo = styled.div`
+        margin-top: 10px;
+        width: 50%;
+        float: right;
+        height: 200px;
+        /* background: blue; */
+    `
+
+
 
     export const Total = styled.div`
         margin: 20px 26px;
         width: auto;
-        height: 44px;
+        height: auto;
+        min-height: 100px;
         background: white;
         border-radius: 3px;
+        display: flex;
+    `
+
+    export const Paymethod = styled.div`
+        margin-top: 10px;
+        width: 50%;
+        float: left;
+        height: auto;
+        /* background: red; */
+    `
+
+    export const Label = styled.div`
+        width: 100%
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 8px;
+        /* background: red; */
+    `
+
+    export const Input = styled.input`
+
+    `
+
+    export const Span = styled.span`
+
+    `
+
+    export const TotalNumber = styled.div`
+        margin-top: 10px;
+        width: 50%;
+        float: right;
+        height: 50px;
+        /* background: blue; */
+
+        .left {
+            flex: 0.35;
+            text-align: left;
+            /* background: yellow; */
+        }
+
+        .right {
+            flex: 0.65;
+            text-align: right;
+            /* background: green; */
+        }
+
+    `
+
+    export const Qty = styled.div`
+        width: 100%;
+        /* background: red; */
+        height: auto;
+        display: flex;
+    `
+
+    export const Tta = styled.div`
+        width: 100%;
+        /* background: blue; */
+        height: auto;
+        display: flex;
     `
 
     export const Paybtn = styled.div`
@@ -148,4 +235,14 @@ export const CloseIconItem = styled(IoClose)`
         background: #01bf71;
         border-radius: 3px;
         margin-bottom: 20px;
+        text-align: center;
+        line-height: 40px;
+        background-color: none;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover{
+            background: #028a52;
+    }
     `
