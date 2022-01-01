@@ -90,8 +90,8 @@ const BackgroundNav = ({ toggle, togglecart}) => {
                         >Đăng ký</NavLinks>
                     </NavItem> */}
                 </NavMenu>
+                {/* <NavRight> */}
                 {userInfo ? (
-                <NavRight>
                         <NavCart >
                         {cartItems.length > 0 && (
                             <Badge onClick={togglecart} badgeContent={cartItems.length} color="primary">
@@ -99,6 +99,18 @@ const BackgroundNav = ({ toggle, togglecart}) => {
                             </Badge>
                         )}
                         </NavCart>
+                        ) : (
+                        <NavCart to='/signin'>
+                        {cartItems.length > 0 && (
+                            <Badge badgeContent={cartItems.length} color="primary">
+                                <ShoppingCartOutlined/>
+                            </Badge>
+                        )}
+                        </NavCart>
+                        )}
+                        {/* </NavRight> */}
+                            {userInfo ? (
+                // <NavRight>
                     <Dropdown>
                         <NavLinks
                         to='#'
@@ -121,7 +133,7 @@ const BackgroundNav = ({ toggle, togglecart}) => {
                             >Đăng xuất</NavLinks>
                         </DropdownContent>
                     </Dropdown>
-                </NavRight>
+                // </NavRight>
                 ) : (
                 <NavBtn>
                     <NavBtnLink

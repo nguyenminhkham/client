@@ -15,6 +15,13 @@ export const CartBackground = styled.aside`
     top: ${({ isOpencart }) => (isOpencart ? 'none' : 'inline-block')};
 `
 
+export const SigninContainer = styled.div`
+    width: 640px;
+    height: 300px;
+    margin: auto;
+    background: red;
+`
+
 export const CartContainer = styled.div`
     margin-top: 90px;
     z-index: 52;

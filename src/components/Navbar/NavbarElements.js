@@ -85,11 +85,20 @@ export const NavMenu = styled.ul`
     align-items: center;
     list-style: none;
     text-align: center;
-    margin-right: -22px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
 
     @media screen and (max-width: 768px) {
         display: none;
     }
+`
+
+export const CenterMenu = styled.div`
+    display: flex;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
 `
 
 export const NavItem = styled.li`
@@ -145,6 +154,9 @@ export const NavRight = styled.div`
 export const Dropdown = styled.div`
     display: inline-block;
     position: relative;
+    /* background: green; */
+    width: auto;
+    min-width: 170px;
 
     &:hover {
         .drc {

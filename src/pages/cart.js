@@ -14,6 +14,7 @@ import {
     Min30,
     Price,
     Removebtn,
+
 } from '../components/CartPage/CartElements'
 import BackgroundNav from '../components/Navbar/backgroundNav';
 import Footer from '../components/Footer';

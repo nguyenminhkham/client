@@ -47,6 +47,7 @@ export const NavCart = styled(LinkR)`
     padding: 0 1rem;
     height: 100%;
     cursor: pointer;
+    /* background: red; */
 
 
     &.active {
@@ -84,6 +85,8 @@ export const NavMenu = styled.ul`
     list-style: none;
     text-align: center;
     margin-right: -22px;
+    width: 100%;
+    /* background: yellow; */
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -111,6 +114,7 @@ export const NavLinks = styled(LinkS)`
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
+    /* background: red; */
 
     @media screen and (max-width: 768px) {
         display: none;
@@ -141,6 +145,8 @@ export const NavRight = styled.div`
 export const Dropdown = styled.div`
     display: inline-block;
     position: relative;
+    width: auto;
+    min-width: 170px;
 
     &:hover {
         .drc {

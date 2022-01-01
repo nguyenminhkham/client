@@ -17,7 +17,8 @@ import {
     Dropdown,
     DropdownContent,
     NavRight,
-    NavCart
+    NavCart,
+    CenterMenu
     } from './NavbarElements';
 // import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
@@ -67,7 +68,10 @@ const Navbar = ({ toggle, togglecart }) => {
                     <FaBars />
                 </MobileIcon>
                 <NavMenu>
+                        <CenterMenu>
                     <NavItem>
+
+                        
                         <NavLinks
                         to='about'
                         smooth={true}
@@ -107,17 +111,29 @@ const Navbar = ({ toggle, togglecart }) => {
                         offset={-80}
                         >Đăng ký</NavLinks>
                     </NavItem>
-                </NavMenu>
+                    </CenterMenu>
+                    </NavMenu>
+                    <NavRight>
                 {userInfo ? (
-                <NavRight>
-                    <NavCart >
+                        <NavCart >
                         {cartItems.length > 0 && (
                             <Badge onClick={togglecart} badgeContent={cartItems.length} color="primary">
                                 <ShoppingCartOutlined/>
                             </Badge>
                         )}
-
-                    </NavCart>
+                        </NavCart>
+                        ) : (
+                        <NavCart to='/signin'>
+                        {cartItems.length > 0 && (
+                            <Badge badgeContent={cartItems.length} color="primary">
+                                <ShoppingCartOutlined/>
+                            </Badge>
+                        )}
+                        </NavCart>
+                        )}
+                        </NavRight>
+                            {userInfo ? (
+                <NavRight>
                     <Dropdown>
                         <NavMenu>
                             <NavItem>
