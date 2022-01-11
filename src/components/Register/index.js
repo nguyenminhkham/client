@@ -4,6 +4,7 @@ import { FormLabel, Container, FormWrap, Icon, FormContent, Form, FormH1, FormIn
 import { register } from '../../actions/userActions'
 import LoadingBox from '../LoadingBox'
 import MessageBox from '../MessageBox'
+import axios from 'axios'
 
 const Register = () => {
     const [name, setName] = useState("")
@@ -13,16 +14,17 @@ const Register = () => {
 
     const userRegister = useSelector((state) => state.userRegister)
     const {loading, error} = userRegister
-
+    const { userInfo } = userRegister
     const dispatch = useDispatch()
+
     const submitHandler = async (e) => {
         e.preventDefault()
-        if(password !== confirmpassword) {
-            alert('Mật khẩu nhập lại phải giống với mật khẩu')
-        } else {
-            dispatch(register(name, email, password))
-        }
+            dispatch(register(name, email, password, confirmpassword))
     }
+
+    try {
+        if (userInfo.msg) window.location = ('/verifyemail')
+        } catch (err) {}
 
     return (
         <>
@@ -35,13 +37,13 @@ const Register = () => {
                             {loading && <LoadingBox></LoadingBox>}
                             {error && <MessageBox variant="danger">{error}</MessageBox>}
                             <FormLabel htmlFor='for'>Tên</FormLabel>
-                            <FormInput type='text' required placeholder="Nhập tên đăng nhập..." onChange={e=>setName(e.target.value)}/>
+                            <FormInput default='' type='text'  placeholder="Nhập tên hiển thị..." onChange={e=>setName(e.target.value)}/>
                             <FormLabel htmlFor='for'>Email</FormLabel>
-                            <FormInput type='email' required placeholder="Nhập email..." onChange={e=>setEmail(e.target.value)}/>
+                            <FormInput default='' placeholder="Nhập email..." onChange={e=>setEmail((e.target.value).toLowerCase())}/>
                             <FormLabel rmLabel htmlFor='for'>Mật khẩu</FormLabel>
-                            <FormInput type='password' required placeholder="Nhập mật khẩu..." onChange={e=>setPassword(e.target.value)}/>
+                            <FormInput default='' type='password'  placeholder="Nhập mật khẩu..." onChange={e=>setPassword(e.target.value)}/>
                             <FormLabel rmLabel htmlFor='for'>Xác nhận mật khẩu</FormLabel>
-                            <FormInput type='password' required placeholder="Nhập lại mật khẩu..." onChange={e=>setConfirmPassword(e.target.value)}/>
+                            <FormInput default='' type='password'  placeholder="Nhập lại mật khẩu..." onChange={e=>setConfirmPassword(e.target.value)}/>
                             <FormButton type='submit'>Đăng ký</FormButton>
                         </Form>
                     </FormContent>

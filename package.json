@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": ".",
   "version": "0.1.0",
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -29,7 +30,7 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "set PORT=3000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

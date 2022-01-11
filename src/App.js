@@ -7,6 +7,8 @@ import RegisterPage from './pages/register';
 import CategoryPage from './pages/caregory';
 import ProductdetailPage from './pages/productdetail';
 import CartPage from './pages/cart';
+import Verifyemail from './pages/verifyemail';
+import ActivationEmail from './pages/activationEmail';
 
 function App() {
   
@@ -19,6 +21,8 @@ function App() {
         <Route path='/category' component={CategoryPage} exact />
         <Route path='/product/:id?' component={ProductdetailPage}/> 
         <Route path='/cart/:id?' component={CartPage}/>
+        <Route path='/verifyemail' component={Verifyemail}/>
+        <Route path='/user/activate/:activation_token' component={ActivationEmail}/>
       </Switch>
     </Router>
   );

@@ -29,7 +29,7 @@ const SignIn = () => {
                             {loading && <LoadingBox></LoadingBox>}
                             {error && <MessageBox variant="danger">{error}</MessageBox>}
                             <FormLabel htmlFor='for'>Email</FormLabel>
-                            <FormInput type='email' required onChange={ (e) => setEmail(e.target.value)}/>
+                            <FormInput type='email' required onChange={ (e) => setEmail((e.target.value).toLowerCase())}/>
                             <FormLabel htmlFor='for'>Mật khẩu</FormLabel>
                             <FormInput type='password' required onChange={ (e) => setPassword(e.target.value)}/>
                             <FormButton type='submit'>Tiếp theo</FormButton>
