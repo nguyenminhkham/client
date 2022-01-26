@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import {Link as LinkR} from 'react-router-dom'
 
-
 export const Container = styled.div`
 
 `
@@ -220,7 +219,6 @@ export const NameItemby = styled.div`
     }
 `
 
-
 export const PriceItem = styled.div`
     color: #01BF71;
     float: right;
@@ -233,7 +231,19 @@ export const PriceItem = styled.div`
     @media screen and (max-width: 630px) {
         font-size: 16px;
     }
+`
 
+export const ButtonContainer = styled.div`
+    display: inline-block;
+    width: 100%;
+
+    .Free {
+        display: ${props => props.value === 0 ? 'inline-block' : 'none'};
+    }
+
+    .Notfree {
+        display: ${props => props.value === 0 ? 'none' : 'inline-block'};
+    }
 `
 
 export const Button = styled.button`
@@ -247,6 +257,7 @@ export const Button = styled.button`
     float: right;
     margin-right: 20px;
     margin-top: 11.5px;
+    width: 102px;
 
     &:hover{
         background-color: #028a52;
@@ -256,10 +267,4 @@ export const Button = styled.button`
 export const Hidden = styled.div`
     overflow-y: hidden;
     height: ${({ isOpencart }) => (isOpencart ? '100vh' : 'auto')};
-    /* background: red; */
 `
-
-
-
-
-

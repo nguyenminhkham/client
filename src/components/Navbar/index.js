@@ -18,7 +18,8 @@ import {
     DropdownContent,
     NavRight,
     NavCart,
-    CenterMenu
+    CenterMenu,
+    DropLinks
     } from './NavbarElements';
 // import logored from '../../images/logored.png'
 import { useDispatch, useSelector } from 'react-redux';
@@ -70,7 +71,6 @@ const Navbar = ({ toggle, togglecart }) => {
                 <NavMenu>
                         <CenterMenu>
                     <NavItem>
-
                         
                         <NavLinks
                         to='about'
@@ -149,15 +149,34 @@ const Navbar = ({ toggle, togglecart }) => {
                             </NavItem>
                         </NavMenu>
                         <DropdownContent className="drc">
-                            <NavLinks
-                            to='#signout'
-                            smooth={true}
-                            duration={500}
-                            spy={true}
-                            exact='true'
-                            offset={-80}
-                            onClick={signoutHandler}
-                            >Đăng xuất</NavLinks>
+
+                                <DropLinks
+                                to='/myaccount'
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                                >Tài khoản</DropLinks>
+                                
+                                <DropLinks
+                                to='/downloads'
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                                >Tải xuống</DropLinks>
+                                
+                                <DropLinks
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                                onClick={signoutHandler}
+                                >Đăng xuất</DropLinks>
+
                         </DropdownContent>
                     </Dropdown>
                 </NavRight>

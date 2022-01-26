@@ -28,6 +28,7 @@ import {
     PriceItem,
     NameAuthor,
     Hidden,
+    ButtonContainer
 } from '../components/Productdetail/productdetailElentments'
 import NumberFormat from 'react-number-format';
 import { useDispatch, useSelector } from 'react-redux'
@@ -42,9 +43,7 @@ import Categories from '../components/Category/CategoriesIndex'
 import { addToCart } from '../actions/cartActions'
 import Cartpayment from '../components/Cartpayment'
 import Sidebar from '../components/Sidebar'
-
-
-
+import { addUser } from '../actions/productActions'
 
 const ProductdetailPage = (props) => {
     const dispatch = useDispatch()
@@ -54,8 +53,10 @@ const ProductdetailPage = (props) => {
     const { loading, error, product } = productDetails
 
     const [current, setCurrent] = useState(0)
-    
-    
+
+    const userRegister = useSelector((state) => state.userSignin)
+    const {userInfo} = userRegister
+
     const nextSlide = () => {
         try {
             const length = product.img.length
@@ -96,7 +97,14 @@ const ProductdetailPage = (props) => {
     const addToCartHandler = () => {
         // props.history.push(`/cart/${productId}`)
         dispatch(addToCart(productId))
-        }
+    }
+
+    const addToDownload = async () => {
+        try {
+            const userId = userInfo._id
+            dispatch(addUser(productId, userId))
+        } catch (err) {}
+    }
 
     const [isOpen, setIsOpen] = useState(false)
     const [isOpencart, setIsOpencart] = useState(false)
@@ -116,8 +124,6 @@ const ProductdetailPage = (props) => {
         console.log(position)
         setScrollPosition(position);
     };
-    
-    
     
     return (
         <>  
@@ -176,10 +182,19 @@ const ProductdetailPage = (props) => {
                         <NameItemby>by</NameItemby>
                         <NameAuthor>Kham</NameAuthor>
                     </LeftAdd>
-                    <RightAdd>
+                    <ButtonContainer value={product.price}>
+
+                    <RightAdd className='Free' >
+                        <Button onClick={addToDownload}>Tải xuống</Button>
+                        <PriceItem className='right'>Free</PriceItem>
+                    </RightAdd>
+
+                    <RightAdd className='Notfree' >
                         <Button onClick={addToCartHandler}>Thêm vào Giỏ</Button>
                         <PriceItem className='right'><NumberFormat value={product.price} displayType={'text'} thousandSeparator={true} suffix={' VND'} /></PriceItem>
                     </RightAdd>
+
+                    </ButtonContainer>
                         </AddContainerSub>
                     </AddContainer>
             <Categories />

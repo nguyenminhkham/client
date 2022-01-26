@@ -9,6 +9,7 @@ import ProductdetailPage from './pages/productdetail';
 import CartPage from './pages/cart';
 import Verifyemail from './pages/verifyemail';
 import ActivationEmail from './pages/activationEmail';
+import DownloadsPage from './pages/downloads';
 
 function App() {
   
@@ -23,6 +24,7 @@ function App() {
         <Route path='/cart/:id?' component={CartPage}/>
         <Route path='/verifyemail' component={Verifyemail}/>
         <Route path='/user/activate/:activation_token' component={ActivationEmail}/>
+        <Route path='/downloads' component={DownloadsPage}/>
       </Switch>
     </Router>
   );

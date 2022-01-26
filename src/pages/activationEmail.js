@@ -109,7 +109,7 @@ const ActivationEmail = (props) => {
         if(activation_token){
             const activationEmail = async () => {
                 try {
-                    const res = await axios.post('https://banvecokhi.com/api/users/activation', {activation_token})
+                    const res = await axios.post('/api/users/activation', {activation_token})
                     setSuccess(res.data.msg)
                     console.log(res.data.msg)
                 } catch (err) {

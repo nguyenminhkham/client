@@ -14,7 +14,6 @@ const Categories = () => {
         dispatch(listProducts())
     }, [dispatch])
 
-            
     return (
         <Container>
             {loading? (
@@ -22,7 +21,7 @@ const Categories = () => {
                 ) : error? (
                     <MessageBox variant="danger">{error}</MessageBox>
                     ) : (
-                        <>
+                <>
                 {products.map((product)=>(
                     <Category product={product} key={product._id}/>
                     ))}

@@ -111,6 +111,29 @@ export const NavLinks = styled(LinkS)`
         border-bottom: 3px solid #01bf71;
     }
 `
+
+export const DropLinks = styled(LinkR)`
+    color: black;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    /* height: 100%; */
+    line-height: 36px;
+    font-size: 14px;
+    cursor: pointer;
+
+
+    &.active {
+        border-bottom: 3px solid #01bf71;
+    }
+
+    &:hover {
+        background: #f1f1f1;
+        color: #4d75a0;
+    }
+`
+
 export const NavBtn = styled.nav`
     display: flex;
     align-items: center;
@@ -120,6 +143,7 @@ export const NavBtn = styled.nav`
         display: none;
     }
 `
+
 export const NavBtnLink = styled(LinkR)`
     border-radius: 50px;
     background: #01bf71;
@@ -151,8 +175,6 @@ export const Dropdown = styled.div`
     &:hover {
         .drc {
             display: block;
-            background: black;
-            border-radius: 0;
         }
     }
 
@@ -169,10 +191,10 @@ export const DropdownContent = styled.ul`
     position: absolute;
     display: none;
     right: 0;
-    min-width: 120px;
-    padding: 10px;
+    width: 180px;
+    padding: 10px 0;
     z-index: 1;
     margin: 0;
     margin-top: 0;
-    border-radius: 5px;
+    background: #FCFCFC;
 `
