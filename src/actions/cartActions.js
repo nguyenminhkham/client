@@ -25,6 +25,7 @@ export const addToCheck = (productId) => async (dispatch, getState) => {
         type: CHECKED_ADD_ITEM,
         payload: {
             product: data._id,
+            userIdx: data.userIdx,
         }
     })
     localStorage.setItem('checkItems', JSON.stringify(getState().checked.checkItems))

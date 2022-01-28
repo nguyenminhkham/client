@@ -1,6 +1,6 @@
 import Footer from '../components/Footer'
 import BackgroundNav from '../components/Navbar/backgroundNav'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useHistory, useLocation } from 'react-router-dom'
 import React,  { Suspense, useEffect, useState } from 'react'
 import { ArrowBackIos, ArrowForwardIos, ArrowBack } from '@material-ui/icons'
 import {
@@ -99,11 +99,14 @@ const ProductdetailPage = (props) => {
         dispatch(addToCart(productId))
     }
 
+    // const history = useHistory()
     const addToDownload = async () => {
         try {
             const userId = userInfo._id
             dispatch(addUser(productId, userId))
         } catch (err) {}
+        // history.push('/downloads')
+        window.location = '../downloads'
     }
 
     const [isOpen, setIsOpen] = useState(false)
@@ -117,13 +120,13 @@ const ProductdetailPage = (props) => {
         setIsOpen(!isOpen)
     }
 
-    const [scrollPosition, setScrollPosition] = useState(0);
+    const [scrollPosition, setScrollPosition] = useState(0)
 
     const handleScroll = () => {
-        const position = window.pageYOffset;
+        const position = window.pageYOffset
         console.log(position)
-        setScrollPosition(position);
-    };
+        setScrollPosition(position)
+    }
     
     return (
         <>  

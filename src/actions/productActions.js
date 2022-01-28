@@ -75,10 +75,10 @@ export const addUser = (productId, userId)  => async (dispatch) => {
     }
 }
 
-export const deleteUser = (productIdx, userIdx, userId)  => async (dispatch) => {
+export const deleteUser = (productIdx, userIdx)  => async (dispatch) => {
     dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: { productIdx, userIdx } })
     try {
-        const {data} = await Axios.post('/api/products/deleteusers', {productIdx, userIdx, userId})
+        const {data} = await Axios.post('/api/products/deleteusers', {productIdx, userIdx})
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data})
     } catch (error) {
         dispatch({

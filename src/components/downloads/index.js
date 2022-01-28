@@ -107,12 +107,13 @@ const DownloadProducts = ({product}) => {
 
     const date = `${dt}/${month}/${year}`
 
-    const [checkedx, setCheckx] = useState({})
+    const [checkedx, setCheckx] = useState()
 
     const checked = useSelector((state) => state.checked)
     const {checkedItems} = checked
 
     const productId = product._id
+    const userIdx = product.users[0]._id
 
     const addToCheckedHandler = () => {
         if (checkedx === true) 

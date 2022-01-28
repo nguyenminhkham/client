@@ -205,7 +205,7 @@ const Downloads = () => {
         dispatch(listuserProduct(userId))
     }, [dispatch, userId])
     
-    const [allchecked, setAllchecked] = useState(false)
+    const [allchecked, setAllchecked] = useState()
     
     const allcheckedChange = () => {
         if (allchecked) {
@@ -219,8 +219,11 @@ const Downloads = () => {
         }
     }
 
+    // let len = Object.keys(checkedItems).length
+
     useEffect(() => {
         setLen(Object.keys(checkedItems).length)
+        console.log(len);
         try {
             if (len === 0) {
                 setAllchecked(false)
@@ -234,17 +237,50 @@ const Downloads = () => {
         } catch (err) {}
     })
 
+    // var i = 1;               //  set your counter to 1
+
+    // function myLoop() {         //  create a loop function
+    //   setTimeout(function() {   //  call a 3s setTimeout when the loop is called
+    //     console.log('hello');   //  your code here
+    //     i++;                    //  increment the counter
+    //     if (i < 10) {           //  if the counter < 10, call the loop function
+    //       myLoop();             //  ..  again which will trigger another 
+    //     }                       //  ..  setTimeout()
+    //     }, 3000)
+    // }
+    // myLoop()
+    
     const deleteusers = () => {
+        setLen(Object.keys(checkedItems).length)
+        var i = len - 1
         if (len > 0) {
-            const userIdx = products[0].users[0]._id
             try {
-                checkedItems.map(x => (
-                    dispatch(deleteUser(x.product, userIdx))
-                ))
-                window.location.reload()
-                } catch (err) {}
+                // checkedItems.map(x => (
+                //     dispatch(deleteUser(x.product, x.userIdx))
+                //     ))
+                // window.location.reload()
+                Loop()
+                function Loop() {
+                    if (i >= 0) {
+                        setTimeout(function() {
+                            var userIdx = products[i].users[0]._id
+                            dispatch(deleteUser(checkedItems[i].product, userIdx))
+                            console.log(i);
+                            console.log(userIdx);
+                            i--
+                            if (i >= 0) {
+                                Loop()
+                            } else {
+                                setTimeout(window.location.reload(), 5000)
+                            }
+                        }, 1000)
+                    }
+                }
+            } catch (err) {
             }
-        }
+        } 
+        
+    }
 
     return (
         <>
