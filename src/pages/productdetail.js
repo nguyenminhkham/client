@@ -44,6 +44,7 @@ import { addToCart } from '../actions/cartActions'
 import Cartpayment from '../components/Cartpayment'
 import Sidebar from '../components/Sidebar'
 import { addUser } from '../actions/productActions'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 const ProductdetailPage = (props) => {
     const dispatch = useDispatch()
@@ -203,6 +204,11 @@ const ProductdetailPage = (props) => {
             <Categories />
             <Footer/>
             </Hidden>
+            <MessengerCustomerChat
+                pageId="101144022461621"
+                appId="1534070466979573"
+                // htmlRef="<REF_STRING>"
+            />
             </>
             )}
         </>

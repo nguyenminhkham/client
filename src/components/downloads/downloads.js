@@ -265,15 +265,15 @@ const Downloads = () => {
                         setTimeout(function() {
                             var userIdx = products[i].users[0]._id
                             dispatch(deleteUser(checkedItems[i].product, userIdx))
-                            console.log(i);
-                            console.log(userIdx);
+                            // console.log(i);
+                            // console.log(userIdx);
                             i--
                             if (i >= 0) {
                                 Loop()
                             } else {
-                                setTimeout(window.location.reload(), 5000)
+                                setTimeout(window.location.reload(), 3000)
                             }
-                        }, 1000)
+                        }, 10)
                     }
                 }
             } catch (err) {

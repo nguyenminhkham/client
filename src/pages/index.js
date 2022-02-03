@@ -12,6 +12,7 @@ import { Hidden } from '../components/Productdetail/productdetailElentments'
 import Services from '../components/Services'
 import Sidebar from '../components/Sidebar'
 import { Container } from '../components/Signin/SigninElements'
+import MessengerCustomerChat from 'react-messenger-customer-chat'
 
 const Home = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -49,6 +50,13 @@ const Home = () => {
             <InfoSection {...homeObjSix}/> */}
             <Footer />
             </Hidden>
+            <>
+            <MessengerCustomerChat
+                pageId="101144022461621"
+                appId="1534070466979573"
+                // htmlRef="<REF_STRING>"
+            />
+            </>
         </>
     )
 }
