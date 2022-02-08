@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from "styled-components";
 import FileDownload from 'js-file-download'
@@ -76,7 +76,7 @@ const DownloadProducts = ({product}) => {
     const dispatch = useDispatch()
     const userRegister = useSelector((state) => state.userSignin)
     const {userInfo} = userRegister
-
+    
     const download = () => {
         try {
             const userId = userInfo._id
@@ -122,7 +122,7 @@ const DownloadProducts = ({product}) => {
             setCheckx(false)
         } else {
 
-            dispatch(addToCheck(productId))
+            dispatch(addToCheck(productId, userIdx))
         }
     }
 

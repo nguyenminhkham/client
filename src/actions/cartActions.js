@@ -19,13 +19,13 @@ export const addToCart = (productId) => async (dispatch, getState) => {
     localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
 }
 
-export const addToCheck = (productId) => async (dispatch, getState) => {
-    const {data} = await Axios.get(`/api/products/${productId}`)
+export const addToCheck = (productId, userIdx) => async (dispatch, getState) => {
+    const {data} = await Axios.get(`/api/products/${productId}`, userIdx)
     dispatch({
         type: CHECKED_ADD_ITEM,
         payload: {
             product: data._id,
-            userIdx: data.userIdx,
+            userIdx: userIdx,
         }
     })
     localStorage.setItem('checkItems', JSON.stringify(getState().checked.checkItems))
