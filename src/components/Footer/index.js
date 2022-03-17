@@ -39,8 +39,8 @@ const Footer = () => {
                 </FooterLinksContainer>
                 <SocialMedia>
                     <SocialMediaWrap>
-                        <SocialLogo to='/' onClick={toggleHome}>Tmaster</SocialLogo>
-                        <WebsiteRights>Tmaster © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
+                        <SocialLogo to='/' onClick={toggleHome}>UFO Cad</SocialLogo>
+                        <WebsiteRights>UFO Cad © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
                         <SocialIcons>
                             <SocialIconLink href="/" target="_blank" aria-label="Facebook">
                                 <FaFacebook />

@@ -29,7 +29,7 @@ const SignIn = () => {
         <>
             <Container>
                 <FormWrap>
-                    <Icon to="/">Tmaster</Icon>
+                    <Icon to="/">UFO Cad</Icon>
                     <FormContent>
                         <Form action="#" onSubmit={submitHandler}>
                             <FormH1>Đăng nhập</FormH1>
