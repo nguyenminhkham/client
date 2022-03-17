@@ -44,6 +44,9 @@ import { addToCart } from '../actions/cartActions'
 import Cartpayment from '../components/Cartpayment'
 import Sidebar from '../components/Sidebar'
 import { addUser } from '../actions/productActions'
+import jwt_decode from "jwt-decode"
+import Cookies from 'js-cookie'
+import {createAxios} from '../../src/createInstance'
 
 const ProductdetailPage = (props) => {
     const dispatch = useDispatch()
@@ -56,6 +59,8 @@ const ProductdetailPage = (props) => {
 
     const userRegister = useSelector((state) => state.userSignin)
     const {userInfo} = userRegister
+
+    let axiosJWT = createAxios(userInfo, dispatch)
 
     const nextSlide = () => {
         try {
@@ -101,9 +106,13 @@ const ProductdetailPage = (props) => {
 
     // const history = useHistory()
     const addToDownload = async () => {
+        const userId = jwt_decode(userInfo.accessToken).id
+        // console.log(document.cookie)
+        // console.log(Cookies.get())
         try {
-            const userId = userInfo._id
-            dispatch(addUser(productId, userId))
+            // const userId = userInfo._id
+            // console.log(userId)
+            dispatch(addUser(productId, userId, userInfo.accessToken, axiosJWT))
         } catch (err) {}
         // history.push('/downloads')
         window.location = '../downloads'
@@ -127,7 +136,7 @@ const ProductdetailPage = (props) => {
         console.log(position)
         setScrollPosition(position)
     }
-    
+
     return (
         <>  
             {loading ? (
@@ -141,7 +150,7 @@ const ProductdetailPage = (props) => {
             <Hidden isOpencart={isOpencart}>
             <BackgroundNav togglecart={togglecart} toggle={toggle} handleScroll={handleScroll}/> 
                     <ArrowBacka >
-                        <ArrowBackb to='../category'>
+                        <ArrowBackb to='../library'>
                         <ArrowBack />
                         <p>Quay lại</p>
                         </ArrowBackb>

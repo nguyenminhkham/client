@@ -23,7 +23,7 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { signout } from '../../actions/userActions';
 import { LocalDiningRounded, ShoppingCartOutlined } from '@material-ui/icons'
-import logored from '../../images/logored.png'
+import logored from '../../images/logoufocad.png'
 
 
 const BackgroundNav = ({ toggle, togglecart}) => {
@@ -36,6 +36,14 @@ const BackgroundNav = ({ toggle, togglecart}) => {
     const dispatch = useDispatch()
     const signoutHandler = () => {
         dispatch(signout())
+    }
+
+    const sellerHandler = () => {
+        if (userInfo.isAuth) {
+            window.location.href = 'http://localhost:3001'
+        } else {
+            window.location = '/Seller/Index'
+        }
     }
 
     return (
@@ -148,6 +156,15 @@ const BackgroundNav = ({ toggle, togglecart}) => {
                                 offset={-80}
                                 onClick={signoutHandler}
                                 >Đăng xuất</DropLinks>
+                                <hr />
+                                <DropLinks
+                                smooth={true}
+                                duration={500}
+                                spy={true}
+                                exact='true'
+                                offset={-80}
+                                onClick={sellerHandler}
+                                >Seller</DropLinks>
 
                         </DropdownContent>
                     </Dropdown>

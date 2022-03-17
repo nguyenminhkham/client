@@ -120,7 +120,7 @@ const Cartpayment = ({isOpencart, togglecart}) => {
                 </TotalNumber>
             </Total>
             <Paybtn>
-                Thanh toán
+                Xác nhận
             </Paybtn>
             </Cartcontainerbag>
         </CartContainer>

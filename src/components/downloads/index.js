@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import styled from "styled-components";
 import FileDownload from 'js-file-download'
 import { addToCheck, removeFromChecked } from '../../actions/cartActions'
-
+import jwt_decode from 'jwt-decode'
 
 const Section = styled.div`
     height: 100px;
@@ -79,7 +79,7 @@ const DownloadProducts = ({product}) => {
     
     const download = () => {
         try {
-            const userId = userInfo._id
+            const userId = jwt_decode(userInfo.refresh_token).id
             const productId = product._id
             axios.post('/api/products/downloads', {productId, userId}, {responseType: "blob"})
             .then((res) => {

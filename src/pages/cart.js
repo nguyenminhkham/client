@@ -42,7 +42,7 @@ const CartPage = (props) => {
         <Rowtop >
             <Col2>
                 {cartItems.length === 0 ? (<MessageBox>
-                    Giỏ hàng trống. <Link to ="/category">Đến trang sản phẩm</Link>
+                    Giỏ hàng trống. <Link to ="/library">Đến trang sản phẩm</Link>
                 </MessageBox>
             ) : (
                 <Ul>

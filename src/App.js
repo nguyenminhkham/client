@@ -10,6 +10,7 @@ import CartPage from './pages/cart';
 import Verifyemail from './pages/verifyemail';
 import ActivationEmail from './pages/activationEmail';
 import DownloadsPage from './pages/downloads';
+import Seller_Sign from './pages/seller_index';
 
 function App() {
   
@@ -19,12 +20,13 @@ function App() {
         <Route path='/' component={Home} exact />
         <Route path='/signin' component={SigninPage} exact />
         <Route path='/register' component={RegisterPage} exact />
-        <Route path='/category' component={CategoryPage} exact />
+        <Route path='/library' component={CategoryPage} exact />
         <Route path='/product/:id?' component={ProductdetailPage}/> 
         <Route path='/cart/:id?' component={CartPage}/>
         <Route path='/verifyemail' component={Verifyemail}/>
         <Route path='/user/activate/:activation_token' component={ActivationEmail}/>
         <Route path='/downloads' component={DownloadsPage}/>
+        <Route path='/Seller/Index' component={Seller_Sign}/>
       </Switch>
     </Router>
   );

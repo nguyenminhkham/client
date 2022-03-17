@@ -14,7 +14,7 @@ export const homeObjOne ={
     dark: true,
     primary: true,
     darkText: false,
-    uri: '/category'
+    uri: '/library'
 }
 
 export const homeObjTwo ={

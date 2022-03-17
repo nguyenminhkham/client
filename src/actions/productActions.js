@@ -57,10 +57,10 @@ export const detailsProduct = (productId) => async (dispatch) => {
         }
     }
 
-export const addUser = (productId, userId)  => async (dispatch) => {
-    dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: { productId, userId } })
+export const addUser = (productId, userId, accessToken, axiosJWT)  => async (dispatch) => {
+    dispatch({ type: PRODUCT_DETAILS_REQUEST, payload: { productId, userId }})
     try {
-        const {data} = await Axios.post('/api/products/addusers', {productId, userId})
+        const {data} = await axiosJWT.post('/api/products/addusers', {productId, userId}, {headers: {token: `Bearer ${accessToken}`}})
         dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data})
         // dispatch({ type: USER_SIGNIN_SUCCESS, payload: data})
         // localStorage.setItem('userInfo', JSON.stringify(data))
@@ -90,4 +90,3 @@ export const deleteUser = (productIdx, userIdx)  => async (dispatch) => {
         })
     }
 }
-

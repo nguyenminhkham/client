@@ -1,0 +1,7 @@
+[ 
+    {"label": "Ít nhất 50.000 VND", "value": "50"},
+    {"label": "Ít nhất 100.000 VND", "value": "100"},
+    {"label": "Ít nhất 200.000 VND", "value": "200"},
+    {"label": "Ít nhất 500.000 VND", "value": "500"},
+    {"label": "Ít nhất 1.000.000 VND", "value": "1000"}
+]

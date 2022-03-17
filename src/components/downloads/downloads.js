@@ -10,19 +10,19 @@ import Pagination from './Pagination.js'
 import { Container, TopSection, Left, Myproducts, Right,
 Input, Table, TableSection, FlexSection, Column, Sectionx,
 RemoveSection, RemoveIcon, RemoveText, Checkbox, Text, Prevbtn, Nextbtn} from './downloadsElements.js'
+import jwt_decode from 'jwt-decode'
 
 const Downloads = () => {
     const dispatch = useDispatch()
     const userSignin = useSelector((state) => state.userSignin)
     const { userInfo } = userSignin
-    const userId = userInfo._id
+    const userId = jwt_decode(userInfo.accessToken).id
     const productListUser = useSelector((state) => state.productListUser)
     const { loading, error, products } = productListUser
     const [posts, setPosts] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [postsPerPage, setPostsPerPage] = useState(6)
     const [allchecked, setAllchecked] = useState()
-    const userId2x = userInfo._id
     const indexOfLastPost = currentPage * postsPerPage
     const indexOfFirstPost = indexOfLastPost - postsPerPage
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
@@ -157,11 +157,11 @@ const Downloads = () => {
 
     useEffect(() => {
         const fetchPosts = async () => {
-            const res = await axios.get(`http://localhost:8000/api/products/user/${userId2x}`)
+            const res = await axios.get(`http://localhost:8000/api/products/user/${userId}`)
             setPosts(res.data)
         }
         fetchPosts()
-    })
+    },[])
 
     const handlePrev = () => {
         if (currentPage>1) {
